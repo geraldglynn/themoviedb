@@ -1,14 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import { fetchMovies } from './api/themoviedb'
-import Listing from './components/listing'
+import List from './components/list'
 
 function App() {
 
-  fetchMovies().then(reponse => console.log(reponse))
   return (
     <div className="App">
-      <Listing />
+      <List
+        fetchMovies={fetchMovies}
+      />
     </div>
   );
 }
