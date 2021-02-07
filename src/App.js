@@ -1,5 +1,5 @@
 import './App.css';
-
+import './style/main.scss'
 import { fetchMovies, fetchGenres } from './api/themoviedb'
 
 import List from './components/list'
