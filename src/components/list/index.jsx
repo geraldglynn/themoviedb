@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import pick from 'lodash/pick'
 
-import { fetchMovies } from '../../api/themoviedb'
+import { fetchMovies } from 'api/themoviedb'
 
 import Container from 'react-bootstrap/Container'
-import Item from '../item'
+import Item from 'components/item'
 
 function List() {
   const [ list, setList ] = useState([])

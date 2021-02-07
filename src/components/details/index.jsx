@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from 'react'
 
-import { fetchMovie } from '../../api/themoviedb'
+import { fetchMovie } from 'api/themoviedb'
 
 import Modal from 'react-bootstrap/Modal'
 import Row from 'react-bootstrap/Row'
@@ -8,8 +8,8 @@ import Col from 'react-bootstrap/Col'
 
 import ProductionCompany from './production-company'
 
-import { genreString } from '../../utils/movie'
-import languageFromCode from '../../utils/language'
+import { genreString } from 'utils/movie'
+import languageFromCode from 'utils/language'
 
 import { poster, date, score, language, genres } from './details.module.scss'
 

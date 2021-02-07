@@ -1,4 +1,4 @@
-import { genreString } from '../movie'
+import { genreString } from 'utils/movie'
 
 describe('movie', () => {
   describe('genreString', () => {

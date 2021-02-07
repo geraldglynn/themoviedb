@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button';
 
-import Details from '../details'
+import Details from 'components/details'
 import { item, heading, date, vote } from './item.module.scss'
 
 function Item(props) {

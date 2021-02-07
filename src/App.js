@@ -1,5 +1,5 @@
 import './style/main.scss'
-import List from './components/list'
+import List from 'components/list'
 
 function App() {
 

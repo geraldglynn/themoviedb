@@ -1,4 +1,4 @@
-import languageFromCode from '../language'
+import languageFromCode from 'utils/language'
 
 describe('languageFromCode', () => {
 
