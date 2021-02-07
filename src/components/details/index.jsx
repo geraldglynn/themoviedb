@@ -8,10 +8,10 @@ import Col from 'react-bootstrap/Col'
 
 import ProductionCompany from './production-company'
 
-import { genreString } from '../../helpers/movie'
-import language from '../../utils/language'
+import { genreString } from '../../utils/movie'
+import languageFromCode from '../../utils/language'
 
-import { poster, date, score, genres } from './details.module.scss'
+import { poster, date, score, language, genres } from './details.module.scss'
 
 function Details(props) {
   const {
@@ -28,16 +28,13 @@ function Details(props) {
   }, [])
 
   const overview = movieDetails.overview || ''
-  const releaseDate = movieDetails.release_date || 'TBC'
+  const releaseDate = movieDetails.release_date ? (new Date(movieDetails.release_date)).toDateString() : 'TBC'
   const voteAverage = movieDetails.vote_average || '--'
-  const originalLanguage = language(movieDetails.original_language || 'xx')
+  const originalLanguage = languageFromCode(movieDetails.original_language || 'xx')
   const displayGenres = genreString(movieDetails.genres || [])
   const productionCompanies = movieDetails.production_companies || []
-  const productionCompanyCount = productionCompanies.length
   const posterPath = movieDetails.poster_path || ''
   const posterUrl = posterPath && `https://image.tmdb.org/t/p/w500${posterPath}`
-
-
 
   return (
     <Modal show={show} onHide={handleClose} size="lg">
@@ -59,6 +56,10 @@ function Details(props) {
               <Col><p>{overview}</p></Col>
             </Row>
             <Row>
+              <Col><h5>Language</h5></Col>
+              <Col className={language}>{originalLanguage}</Col>
+            </Row>
+            <Row>
               <Col><h5>Genres</h5></Col>
               <Col className={genres}>{displayGenres}</Col>
             </Row>
@@ -73,7 +74,6 @@ function Details(props) {
                       key={productionCompany.id}
                       name={productionCompany.name}
                       logoPath={productionCompany.logo_path}
-                      productionCompanyCount={productionCompanyCount}
                     />
                   )}
                 </Row>

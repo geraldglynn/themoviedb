@@ -15,12 +15,17 @@
   text-align: right;
 }
 
+.language {
+  text-align: right;
+}
+
 .productionCompany {
-  img{
-    width: 100%;
+  img {
+    max-width: 100%;
+    max-height: 5rem;
   }
 
-  p{
+  p {
     hyphens: auto;
     word-wrap: break-word;
   }

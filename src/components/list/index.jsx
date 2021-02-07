@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react'
+import { fetchMovies } from '../../api/themoviedb'
 import Container from 'react-bootstrap/Container'
-import Item from './item'
+import Item from '../item'
 
 function List(props) {
   const [ list, setList ] = useState([])
 
   useEffect(() => {
-    props.fetchMovies().then(response => setList(response.results))
+    fetchMovies().then(response => setList(response.results))
   }, [])
 
   return(
     <div>
-      <h1>List</h1>
+      <h2>Latest Popular Movies</h2>
       <Container>
         { list.map(item =>
           <Item

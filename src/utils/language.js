@@ -186,5 +186,5 @@ const languages = {
   zu: 'Zulu',
 }
 
-const language = code => languages[code]
-export default language
+const languageFromCode = code => languages[code]
+export default languageFromCode

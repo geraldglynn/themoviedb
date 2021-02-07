@@ -31,7 +31,7 @@ function Item(props) {
         <div className={date}>{releaseDate}</div>
       </Col>
       <Col className={vote}>
-        <span>{voteAverage}</span>
+        <span>{voteAverage || '--'}</span>
       </Col>
       <Col>
         <Button variant="primary" onClick={handleShow}>Info</Button>
