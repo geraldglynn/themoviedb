@@ -11,13 +11,18 @@ context('Actions', () => {
   it('should have Info button', () => {
     cy.get(`${firstRow} ${infoButton}`)
       .should('have.text', 'Info')
-      .click()
   })
 
-  it('Details modal should open and close', () => {
-    cy.get(`${firstRow} ${infoButton}`)
-      .click()
+  it('Details modal should open ', () => {
+    cy.clickElement(`${firstRow} ${infoButton}`)
     cy.get('body').should('have.class', 'modal-open')
+  })
+
+  it('Details modal should close ', () => {
+    cy.clickElement(`${firstRow} ${infoButton}`)
+    cy.clickElement('button.close')
+    cy.get('body')
+      .should('not.have.class', 'modal-open')
   })
 
 })
