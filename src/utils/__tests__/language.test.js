@@ -22,7 +22,7 @@ describe('languageFromCode', () => {
   ]
 
   countries.forEach( country => {
-    it(`should return correct country name`, ()=> {
+    it('should return correct country name', ()=> {
       expect(languageFromCode(country.code)).toBe(country.name)
     })
   })
