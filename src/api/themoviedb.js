@@ -2,12 +2,12 @@ import pick from 'lodash/pick'
 import http from './http'
 
 export const fetchMovies = () => {
-    return http('/discover/movie')
+    return http({ path: '/discover/movie' })
     .then(json => json.results)
 }
 
 export const fetchMovie = (id) => {
-  return http('/movie', {id})
+  return http({ path: '/movie', params: {id} })
   .then(json => pick(json,
     [
       'overview',
