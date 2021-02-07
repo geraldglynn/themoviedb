@@ -1,6 +1,9 @@
 import './App.css';
-import { fetchMovies } from './api/themoviedb'
+
+import { fetchMovies, fetchGenres } from './api/themoviedb'
+
 import List from './components/list'
+
 
 function App() {
 
@@ -8,6 +11,7 @@ function App() {
     <div className="App">
       <List
         fetchMovies={fetchMovies}
+        fetchGenres={fetchGenres}
       />
     </div>
   );
