@@ -26,10 +26,9 @@ describe('Item', () => {
   describe('title', () => {
     const dom = renderDom(mockMovie)
     const domText = dom.getByText
-    // const domTestId = dom.getByTestId
-    it('should render', () => {
-      const displayTitle = domText('Parasite (기생충)')
-      expect(displayTitle).toBeInTheDocument()
+    it('should render title', () => {
+      const element = domText('Parasite (기생충)')
+      expect(element).toBeInTheDocument()
     })
   })
 })
