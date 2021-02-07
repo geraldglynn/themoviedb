@@ -27,8 +27,8 @@ function Item(props) {
   return (
     <Row className={item}>
       <Col xs={8}>
-        <h2 className={heading}>{displayTitle}</h2>
-        <div className={date}>{releaseDate}</div>
+        <h2 className={heading} data-testid='item-title'>{displayTitle}</h2>
+        <div className={date} data-testid='item-date'>{releaseDate}</div>
       </Col>
       <Col className={vote}>
         <span>{voteAverage || '--'}</span>
