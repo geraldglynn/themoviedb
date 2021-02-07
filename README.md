@@ -1,19 +1,25 @@
-# Showtime Analytics – Technical Test
+# Showtime Analytics - Demo
+## Scripts
+node version is `10.13.0`
 
-## running app
-node is XXX
+### Install
+`npm install`
+### Run
+`npm run start`
+### Run Tests
+`npm run test`
+
+`yarn run cypress open`
 
 ## Todo
-- Remove default README text below
-- Prodcution companies
 - Language support
-- caching api calls
-### Testing:
+  - allow user to select language
+  - API calls to include selected langauge
+- Install Storybook for view components in isolation
+## Testing:
 - Jest: unit tests
-- React Test Library: integration tests
+- React Test Library: component tests
 - Cypress: E2E tests
 
-### Styling
-- Add more stilling using Sass Modules
-- Install Storybook
+
 
