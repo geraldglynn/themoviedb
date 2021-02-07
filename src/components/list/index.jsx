@@ -6,6 +6,8 @@ import { fetchMovies } from 'api/themoviedb'
 import Container from 'react-bootstrap/Container'
 import Item from 'components/item'
 
+import { header } from './list.module.scss'
+
 function List() {
   const [ list, setList ] = useState([])
 
@@ -26,7 +28,7 @@ function List() {
 
   return(
     <div>
-      <h2>Latest Popular Movies</h2>
+      <h2 className={header}>Latest Popular Movies</h2>
       <Container>
         { list.map(item =>
           <Item
