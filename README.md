@@ -2,6 +2,9 @@
 
 ## Todo
 - Remove default README text below
+- Prodcution companies
+- Language support
+- 
 ### Testing:
 - Jest: unit tests
 - React Test Library: integration tests

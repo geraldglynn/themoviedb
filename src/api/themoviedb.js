@@ -15,3 +15,8 @@ export const fetchGenres = () => {
   .then(res => res.json())
   .then(json => arrayToObject(json.genres, 'id', 'name'))
 }
+
+export const fetchMovie = (id) => {
+  return fetch(`${url}/movie/${id}?sort_by=popularity.desc&api_key=${apiKey}&language${language}`)
+  .then(res => res.json())
+}
