@@ -8,11 +8,12 @@ import Item from 'components/item'
 
 import { header } from './list.module.scss'
 
-function List() {
+function List(props) {
+  const { language } = props
   const [ list, setList ] = useState([])
 
   useEffect(() => {
-    fetchMovies().then(response => setList(
+    fetchMovies(language).then(response => setList(
       response.map( item =>
         pick(item,
           [
@@ -24,7 +25,7 @@ function List() {
           ]
         ))
       ))
-    }, [])
+    }, [language])
 
   return(
     <div>
@@ -38,6 +39,7 @@ function List() {
             originalTitle={item.original_title}
             releaseDate={item.release_date}
             voteAverage={item.vote_average}
+            language={language}
             />
           )}
       </Container>

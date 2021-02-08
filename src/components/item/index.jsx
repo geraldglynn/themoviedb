@@ -14,6 +14,7 @@ function Item(props) {
     originalTitle,
     releaseDate,
     voteAverage,
+    language,
   } = props
 
   const [showDetails, setShowDetails] = useState(false)
@@ -43,6 +44,7 @@ function Item(props) {
           show={showDetails}
           handleClose={handleClose}
           displayTitle={displayTitle}
+          language={language}
         />
       }
     </Row>

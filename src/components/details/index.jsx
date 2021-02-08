@@ -19,12 +19,13 @@ function Details(props) {
     show,
     handleClose,
     displayTitle,
+    language,
   } = props
 
   const [movieDetails, setMovieDetails] = useState([])
 
   useLayoutEffect(() => {
-    fetchMovie(id).then(response => setMovieDetails(response))
+    fetchMovie({id, language}).then(response => setMovieDetails(response))
   }, [])
 
   const overview = movieDetails.overview || ''

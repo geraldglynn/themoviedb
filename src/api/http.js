@@ -1,17 +1,18 @@
 const tmdbDomain = 'https://api.themoviedb.org/3'
 const tmdbApiKey = '291d7cc5431b3057427d4f7814163f9e'
-const language = 'en-GB'
+const defaultLanguage = 'en-GB'
 
 const CACHE = {};
 const MAX_AGE = 600000;  // 10m
 
 const apiRouter = (path, params) => {
+  const language = params?.language || defaultLanguage
   switch(path) {
     case '/discover/movie':
-      return `${tmdbDomain}/discover/movie?api_key=${tmdbApiKey}&sort_by=popularity.desc&language${language}`
+      return `${tmdbDomain}/discover/movie?api_key=${tmdbApiKey}&sort_by=popularity.desc&language=${language}`
     case '/movie':
       const id = params?.id
-      return `${tmdbDomain}/movie/${id}?api_key=${tmdbApiKey}&language${language}`
+      return `${tmdbDomain}/movie/${id}?api_key=${tmdbApiKey}&language=${language}`
     default:
       break
   }
