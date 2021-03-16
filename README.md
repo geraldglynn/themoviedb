@@ -1,4 +1,4 @@
-# Showtime Analytics - Demo
+# The Movie DB - Demo
 ## Scripts
 node version is `10.13.0`
 
